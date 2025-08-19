@@ -1,0 +1,21 @@
+CREATE TYPE ARTICLE_TAG AS ENUM (
+    'Council News',
+    'Community Engagement',
+    'Local Government',
+    'Policy & Strategy',
+    'Parks & Gardens',
+    'Sustainability',
+    'Waste & Recycling',
+    'Roads & Transport',
+    'Public Spaces',
+    'Community Events',
+    'Arts & Culture',
+    'Libraries',
+    'Sports & Recreation',
+    'Youth Programs',
+    'Health & Wellbeing',
+    'Community Safety',
+    'Local Businesses',
+    'Education & Learning',
+    'Volunteering'
+);
