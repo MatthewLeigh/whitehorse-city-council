@@ -7,6 +7,21 @@ services:
     networks:
       - network-whitehorse
 
+  whitehorse-service-article:
+    build: ./backend
+    container_name: whitehorse-service-article
+    environment:
+      DB_HOST: ${DB_HOST:-whitehorse-db}
+      DB_USER: ${DB_USER:-root}
+      DB_PASSWORD: ${DB_PASSWORD:-password}
+      DB_NAME: ${DB_NAME:-whitehorse-db}
+    ports:
+      - "80:80"
+    depends_on:
+      - whitehorse-db
+    networks:
+      - network-whitehorse
+
 networks:
   network-whitehorse:
     driver: bridge 
