@@ -15,10 +15,19 @@ services:
       DB_USER: ${DB_USER:-root}
       DB_PASSWORD: ${DB_PASSWORD:-password}
       DB_NAME: ${DB_NAME:-whitehorse-db}
-    ports:
-      - "80:80"
     depends_on:
       - whitehorse-db
+    networks:
+      - network-whitehorse
+
+  whitehorse-gateway:
+    build: ./gateway
+    container_name: whitehorse-gateway
+    depends_on:
+      - whitehorse-db
+      - whitehorse-service-article
+    ports:
+      - "80:80"
     networks:
       - network-whitehorse
 
