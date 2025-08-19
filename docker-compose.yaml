@@ -1,0 +1,12 @@
+services:
+  whitehorse-db:
+    build: ./database
+    container_name: whitehorse-db
+    ports:
+      - "5432:5432"
+    networks:
+      - network-whitehorse
+
+networks:
+  network-whitehorse:
+    driver: bridge 
