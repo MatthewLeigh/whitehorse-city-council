@@ -1,0 +1,14 @@
+CREATE TABLE Article (
+    ArticleID UUID,
+    AuthorID UUID,
+    ImageID UUID,
+    Slug TEXT,
+    Title TEXT NOT NULL,
+    ArticleType ARTICLE_TYPE NOT NULL,
+    Content TEXT, 
+    CreatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    EditedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    PRIMARY KEY (ArticleID),
+    FOREIGN KEY (AuthorID) REFERENCES Author(AuthorID) ON DELETE CASCADE,
+    FOREIGN KEY (ImageID) REFERENCES Image(ImageID) ON DELETE CASCADE
+);
